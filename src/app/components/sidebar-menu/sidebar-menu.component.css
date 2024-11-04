@@ -1,0 +1,58 @@
+/* Style général pour la barre de menu */
+.sidebar-menu {
+    width: 250px; /* Largeur de la barre de menu */
+    background-color: #333; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    height: 100vh; /* Hauteur de la barre de menu */
+    display: flex;
+    flex-direction: column; /* Aligne les éléments verticalement */
+    padding: 0; /* Assure qu'il n'y a pas de padding */
+    margin: 0; /* Assure qu'il n'y a pas de marge */
+    position: fixed; /* Fixe la barre de menu sur le côté */
+    top: 0;
+    left: 0;
+    box-sizing: border-box; /* Inclut padding et border dans la largeur et hauteur */
+    border: 5px solid #333; /* Contour de la même couleur que la barre de menu */
+  }
+  
+  /* Style pour la section logo */
+  .sidebar-menu .logo {
+    width: 100%; /* Prend toute la largeur de la barre de menu */
+    padding: 0; /* Assure qu'il n'y a pas de padding autour du logo */
+    margin: 0; /* Assure qu'il n'y a pas de marge autour du logo */
+  }
+  
+  /* Style pour l'image du logo */
+  .sidebar-menu .logo img {
+    width: 100%; /* L'image prend toute la largeur disponible */
+    height: auto; /* Maintient les proportions de l'image */
+    display: block; /* Évite les espaces en dessous de l'image */
+  }
+  
+  /* Style pour la liste de navigation */
+  .sidebar-menu ul {
+    list-style: none; /* Supprime les puces de la liste */
+    padding: 0; /* Supprime le padding par défaut */
+    margin: 0; /* Supprime la marge par défaut */
+    flex: 1; /* Permet à la liste de navigation de prendre tout l'espace disponible restant */
+  }
+  
+  /* Style pour chaque élément de la liste de navigation */
+  .sidebar-menu ul li {
+    margin: 0; /* Supprime la marge autour des éléments de la liste */
+  }
+  
+  /* Style pour les liens de navigation */
+  .sidebar-menu ul li a {
+    display: block; /* Transforme les liens en blocs pour occuper toute la largeur */
+    padding: 15px; /* Ajoute du padding autour du texte */
+    color: #fff; /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement des liens */
+    border-bottom: 1px solid #444; /* Ajoute une bordure en bas de chaque lien */
+    transition: background-color 0.3s; /* Ajoute une transition pour le survol */
+  }
+  
+  /* Style pour les liens au survol */
+  .sidebar-menu ul li a:hover {
+    background-color: #555; /* Change la couleur de fond au survol */
+  }

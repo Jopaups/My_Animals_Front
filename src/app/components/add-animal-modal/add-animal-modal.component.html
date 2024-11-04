@@ -1,0 +1,50 @@
+<div class="modal" [class.open]="isOpen">
+  <div class="modal-content">
+    <span class="close" (click)="close()">&times;</span>
+    <h2>Ajouter un Animal</h2>
+    <form (ngSubmit)="addAnimal()">
+      <div>
+        <label for="name">Nom :</label>
+        <input type="text" id="name" [(ngModel)]="newAnimal.name" name="name" required>
+      </div>
+
+      <div>
+        <label for="birthDate">Date de naissance :</label>
+        <input type="date" id="birthDate" [(ngModel)]="newAnimal.birthDate" name="birthDate" required>
+      </div>
+
+      <div>
+        <label for="sex">Sexe :</label>
+        <select id="sex" [(ngModel)]="newAnimal.sex.id" name="sex" required>
+          <option *ngFor="let option of sexOptions" [value]="option.id">{{ option.type }}</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="species">Espèce :</label>
+        <select id="species" [(ngModel)]="newAnimal.species.id" name="species" (change)="onSpeciesChange()" required>
+          <option value="">Sélectionnez une espèce</option>
+          <option *ngFor="let species of speciesList" [value]="species.id">{{ species.name }}</option>
+        </select>
+      </div>
+
+      <!-- Affiche la case de sélection de la race seulement si une espèce est sélectionnée -->
+      <div *ngIf="newAnimal.species.id">
+        <label for="breed">Race :</label>
+        <select id="breed" [(ngModel)]="newAnimal.breed.id" name="breed" required>
+          <option value="">Sélectionnez une race</option>
+          <option *ngFor="let breed of breedList" [value]="breed.id">{{ breed.name }}</option>
+        </select>
+      </div>
+
+      <div>
+        <label>
+          <input type="checkbox" [(ngModel)]="newAnimal.hasAllergies" name="hasAllergies">
+          A des allergies
+        </label>
+      </div>
+
+      <button type="submit">Ajouter</button>
+    </form>
+  </div>
+</div>

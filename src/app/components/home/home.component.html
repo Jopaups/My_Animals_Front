@@ -1,0 +1,24 @@
+<div class="content">
+    <h1>Welcome to My Application</h1>
+    <p>This is the main content area.</p>
+  <div class="animal-list">
+    <h1>Liste des Animaux</h1>
+    <ul *ngIf="animals.length > 0">
+      <li *ngFor="let animal of animals">
+        <div class="animal-item">
+          <div class="animal-details">
+            <h2>{{ animal.name }}</h2>
+            <p>Date de naissance : {{ animal.birthDate | date: 'yyyy-MM-dd' }}</p>
+            <p>Allergies: {{ animal.hasAllergies ? 'Oui' : 'Non' }}</p>
+            <p>Sexe: {{ animal.sex.type }}</p>
+            <p>Espèce: {{ animal.species.name }}</p>
+            <p>Race: {{ animal.breed.name }}</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="animals.length === 0">
+      <p>Aucun animal trouvé.</p>
+    </div>
+  </div>
+</div>
